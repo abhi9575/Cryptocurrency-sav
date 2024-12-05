@@ -1,4 +1,4 @@
-.searchStyle>form{
+.searchStyle>form>div{
   display: flex;
   justify-content: center;
   gap: 15px;
@@ -12,7 +12,7 @@
   padding-left: 45px;
 }
 
-.searchStyle>form>button{
+.searchStyle>form>div>button{
   padding: 2px 5px;
   font-weight: 700;
   font-size: 14px;
@@ -34,6 +34,6 @@
 .searchIcon{
   position: absolute;
   font-size: 30px;
-  left: 19px;
+  left: 21px;
   top: 5px;
 }

@@ -38,7 +38,7 @@ const App = () => {
   //Search
   function searchValuefn(searchedValue){
     setcryptonite((cryptonite)=>{
-      return cryptonite.filter((coin)=> coin.name.toLowerCase().includes(searchedValue.toLowerCase()) )
+      return crypto.filter((coin)=> coin.name.toLowerCase().includes(searchedValue.toLowerCase()) )
     })
   }
  
