@@ -3,10 +3,20 @@ import Navbar from "./Components/Navbar/Navbar"
 import "./App.css"
 import axios from 'axios';
 import { useEffect, useState } from "react"
+import Pagination from "./Components/Pagination/Pagination";
+import {closestCorners, DndContext, KeyboardSensor, PointerSensor, TouchSensor, useSensor, useSensors} from '@dnd-kit/core';
+import {
+  arrayMove,
+  sortableKeyboardCoordinates,
+} from '@dnd-kit/sortable';
 
 const App = () => {
 
-  let [crypto, setCrypto] = useState([])
+  let [crypto, setCrypto] = useState([]);
+  let [currentPage, setCurrentPage] = useState(1);
+  let [itemPerPage, setItemPerPage] = useState(9);
+  let [cryptonite, setcryptonite] = useState([]);
+
 
   useEffect(()=>{
     async function fetchCrypto(){
@@ -19,11 +29,52 @@ const App = () => {
     }
     fetchCrypto()
   },[])
+
+  //Pagination
+  function paginate(updatePage){
+    setCurrentPage(updatePage)
+  }
+
+ 
   
+  //Drag & Drop
+useEffect(()=>{
+   let start = (currentPage -1 ) * itemPerPage;
+  let end = start + itemPerPage;
+  setcryptonite(crypto.slice(start, end));
+},[crypto, currentPage,itemPerPage])
+
+   let sensors = useSensors(
+    useSensor(PointerSensor),
+    useSensor(TouchSensor),
+    useSensor(KeyboardSensor,{
+      coordinateGetter: sortableKeyboardCoordinates
+    })
+   )
+   
+   function handleDragEnd(event){
+    let {active , over} = event;
+    if(active.id === over.id) return;
+
+    setcryptonite((cryptonite)=>{
+     let startIndex = position(active.id);
+     let endIndex = position(over.id);
+     return arrayMove(cryptonite, startIndex, endIndex)
+    })
+   }
+
+  function position(id){
+  return cryptonite.findIndex((crypt)=> crypt.id === id);
+   }
+
   return (
     <div className="container">
       <Navbar />
-      <CryptoData cryptoData={crypto} />
+      <Pagination paginate={paginate} dataLength={crypto.length} itemPerPage={itemPerPage} />
+      <DndContext collisionDetection={closestCorners} sensors={sensors} onDragEnd={handleDragEnd}
+>         
+      <CryptoData cryptoData={cryptonite} />
+      </DndContext>
     </div>
   )
 }

@@ -1,0 +1,16 @@
+.paginationBox{
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  align-items: center;
+  margin: 30px;
+}
+
+
+.paginationBox>button{
+  background-color: teal;
+  padding: 11px 14px;
+  border-radius: 5px;
+  min-width: 30px;
+  color: aliceblue;
+}
