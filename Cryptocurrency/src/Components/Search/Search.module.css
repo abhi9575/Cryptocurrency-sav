@@ -1,0 +1,39 @@
+.searchStyle>form{
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  padding: 10px;
+}
+
+.searchedValue{
+  padding: 7px;
+  font-size: 17px;
+  border-radius: 6px;
+  padding-left: 45px;
+}
+
+.searchStyle>form>button{
+  padding: 2px 5px;
+  font-weight: 700;
+  font-size: 14px;
+  border-radius: 10px;
+  background-color: rgba(253, 0, 0, 0.904);
+  &:hover{
+    background-color: black;
+    color: #ff1100;
+    transform: scale(1.05);
+    transition: all 0.3s ease-in;
+    border: 1px solid whitesmoke;
+  }
+}
+
+.searchIconStyle{
+  position: relative;
+}
+
+.searchIcon{
+  position: absolute;
+  font-size: 30px;
+  left: 19px;
+  top: 5px;
+}

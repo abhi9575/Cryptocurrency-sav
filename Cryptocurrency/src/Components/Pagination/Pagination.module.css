@@ -4,13 +4,26 @@
   justify-content: center;
   align-items: center;
   margin: 30px;
+  margin-top: 50px;
 }
 
 
 .paginationBox>button{
-  background-color: teal;
-  padding: 11px 14px;
+  background-color: #ff1100;
+  padding: 16px;
   border-radius: 5px;
   min-width: 30px;
-  color: aliceblue;
+  color: black;
+  font-size: 15px;
+  font-weight: 700;
+  &:hover{
+    background-color: black;
+    color: #ff1100;
+    transform: scale(1.2);
+    transition: all 0.3s ease-in;
+    border: 1px solid whitesmoke;
+
+  }
 }
+
+

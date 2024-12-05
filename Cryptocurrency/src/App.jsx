@@ -17,7 +17,7 @@ const App = () => {
   let [itemPerPage, setItemPerPage] = useState(9);
   let [cryptonite, setcryptonite] = useState([]);
 
-
+//Fetch API data
   useEffect(()=>{
     async function fetchCrypto(){
       try {
@@ -34,7 +34,13 @@ const App = () => {
   function paginate(updatePage){
     setCurrentPage(updatePage)
   }
-
+   
+  //Search
+  function searchValuefn(searchedValue){
+    setcryptonite((cryptonite)=>{
+      return cryptonite.filter((coin)=> coin.name.toLowerCase().includes(searchedValue.toLowerCase()) )
+    })
+  }
  
   
   //Drag & Drop
@@ -69,12 +75,12 @@ useEffect(()=>{
 
   return (
     <div className="container">
-      <Navbar />
-      <Pagination paginate={paginate} dataLength={crypto.length} itemPerPage={itemPerPage} />
-      <DndContext collisionDetection={closestCorners} sensors={sensors} onDragEnd={handleDragEnd}
->         
+      <Navbar searchValuefn={searchValuefn} />
+      
+      <DndContext collisionDetection={closestCorners} sensors={sensors} onDragEnd={handleDragEnd}>         
       <CryptoData cryptoData={cryptonite} />
       </DndContext>
+      <Pagination paginate={paginate} dataLength={crypto.length} itemPerPage={itemPerPage} />
     </div>
   )
 }
