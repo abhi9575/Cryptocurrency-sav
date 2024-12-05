@@ -1,0 +1,10 @@
+.cryptoCard{
+  border: 1px solid black;
+  text-align: center;
+  padding: 20px;
+}
+
+
+.cryptoCard>img{
+  width: 35%;  
+}
