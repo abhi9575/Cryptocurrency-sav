@@ -1,6 +1,8 @@
 ### Crypto-World
 A React-based web application that allows users to explore and track cryptocurrencies. The app fetches real-time data from the CoinGecko API and displays the list of cryptocurrencies, their market cap, and other related information. Users can search, filter, and paginate through the data efficiently.
 
+### Deployed Link: https://cryptocurrency-git.netlify.app/
+
 ### Features:
 **`Cryptocurrency Data`**: Displays the list of cryptocurrencies, fetched from the CoinGecko API.
 **`Search Filter`**: Search through the list of cryptocurrencies by name, with a live filter that updates as the user types.
@@ -87,5 +89,4 @@ Add more advanced filtering options (e.g., by market cap, volume, etc.).
 Integrate more detailed views for each cryptocurrency, including historical data and charts.
 Implement caching to improve data fetching efficiency and reduce the number of API calls.
 Add a dark mode toggle for better accessibility.
-
 
