@@ -20,6 +20,8 @@ const App = () => {
   let [currentPage, setCurrentPage] = useState(1); // Track the current page for pagination
   let [itemsPerPage, setItemsPerPage] = useState(9); // Track the items per page for pagination
   let [cryptonite, setcryptonite] = useState([]); // State to store the paginated data for display
+  let [loading, setLoading] = useState(true); // State to track loading
+
 
   // Fetch API data
   useEffect(() => {
@@ -29,8 +31,10 @@ const App = () => {
           "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false"
         );
         setCrypto(response.data);
+        setLoading(false); // Set loading to false once data is fetched
       } catch (error) {
         console.log(error);
+        setLoading(false); //Stop loading, If Error
       }
     }
     fetchCrypto();
@@ -86,7 +90,7 @@ const App = () => {
   return (
     <div className="container">
       <Navbar searchValuefn={searchValuefn} />
-
+      {loading ? <div className="loading">Loading...</div> : null }  {/* // Show loading indicator if loading is true  */}
       <DndContext
         collisionDetection={closestCorners} // collisionDetection defines how items interact during drag (move to closest)
         sensors={sensors} // sensors define the input methods for dragging

@@ -2,11 +2,11 @@
 A React-based web application that allows users to explore and track cryptocurrencies. The app fetches real-time data from the CoinGecko API and displays the list of cryptocurrencies, their market cap, and other related information. Users can search, filter, and paginate through the data efficiently.
 
 ### Features:
-**`Cryptocurrency Data`**:: Displays the list of cryptocurrencies, fetched from the CoinGecko API.
-**`Search Filter`**:: Search through the list of cryptocurrencies by name, with a live filter that updates as the user types.
-**`Pagination`**:: Paginate through the cryptocurrency list to load a smaller subset of items at a time, improving performance and user experience.
-**`Error Handling`**:: Displays an error message if data fetching fails.
-**`Loading Indicator`**:: Displays a loading indicator while data is being fetched from the API.
+**`Cryptocurrency Data`**: Displays the list of cryptocurrencies, fetched from the CoinGecko API.
+**`Search Filter`**: Search through the list of cryptocurrencies by name, with a live filter that updates as the user types.
+**`Pagination`**: Paginate through the cryptocurrency list to load a smaller subset of items at a time, improving performance and user experience.
+**`Error Handling`**: Displays an error message if data fetching fails.
+**`Loading Indicator`**: Displays a loading indicator while data is being fetched from the API.
 
 ### Technologies Used:
 **`React`**:: Frontend framework for building the user interface.
