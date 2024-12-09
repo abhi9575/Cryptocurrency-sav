@@ -16,6 +16,8 @@
   color: black;
   font-size: 15px;
   font-weight: 700;
+  cursor: pointer;
+
   &:hover{
     background-color: black;
     color: #ff1100;

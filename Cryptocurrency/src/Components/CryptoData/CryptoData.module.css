@@ -1,6 +1,6 @@
 .cryptoContainer{
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   background-color: rgb(253, 0, 2);
   gap: 1rem;
   padding: 10px;

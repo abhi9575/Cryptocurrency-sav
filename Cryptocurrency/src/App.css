@@ -15,3 +15,10 @@ div.container {
   font-weight: bold;
   margin-top: 20px;
 }
+
+.recaptcha-container {
+  display: flex;
+  margin: 120px auto;
+  text-align: center;
+  height: 40.8vh;
+}

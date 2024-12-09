@@ -18,6 +18,8 @@
   font-size: 14px;
   border-radius: 10px;
   background-color: rgba(253, 0, 0, 0.904);
+  cursor: pointer;
+
   &:hover{
     background-color: black;
     color: #ff1100;
