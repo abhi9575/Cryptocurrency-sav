@@ -18,12 +18,14 @@ import {
 import { arrayMove, sortableKeyboardCoordinates } from "@dnd-kit/sortable";
 
 const App = () => {
-  let [crypto, setCrypto] = useState([]); // Store the fetched cryptocurrency data
-  let [currentPage, setCurrentPage] = useState(1); // Track the current page for pagination
+  let [crypto, setCrypto] = useState([]);             // Store the fetched cryptocurrency data
+  let [currentPage, setCurrentPage] = useState(1);    // Track the current page for pagination
   let [itemsPerPage, setItemsPerPage] = useState(10); // Track the items per page for pagination
-  let [cryptonite, setcryptonite] = useState([]); // State to store the paginated data for display
-  let [loading, setLoading] = useState(true); // State to track loading
-  const [recaptchaVerified, setRecaptchaVerified] = useState(false); // Track reCAPTCHA verification
+  let [cryptonite, setcryptonite] = useState([]);     // State to store the paginated data for display
+  let [loading, setLoading] = useState(true);         // State to track loading
+  let [recaptchaVerified, setRecaptchaVerified] = useState(false); // Track reCAPTCHA verification
+  let [cryptoCoin, setCryptoCoin] = useState([]);     // Update crypto data after every search
+
 
   // Fetch API data
   useEffect(() => {
@@ -33,6 +35,7 @@ const App = () => {
           "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false"
         );
         setCrypto(response.data);
+        setCryptoCoin(response.data)
         setLoading(false); // Set loading to false once data is fetched
       } catch (error) {
         console.log(error);
@@ -52,6 +55,7 @@ const App = () => {
 
   // Search
   function searchValuefn(searchedValue) {
+    setCrypto(cryptoCoin)
     setCrypto((crypto) => {
       return crypto.filter((coin) =>
         coin.name.toLowerCase().includes(searchedValue.toLowerCase())
@@ -95,7 +99,7 @@ const App = () => {
 
   // Handle reCAPTCHA verification
   function handleRecaptcha(value) {
-    // console.log("reCAPTCHA success:", value);
+    console.log("reCAPTCHA success:", value);
     setRecaptchaVerified(true);
   }
 
