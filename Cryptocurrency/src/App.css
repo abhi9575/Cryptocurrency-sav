@@ -1,5 +1,6 @@
 div.container {
   max-width: 1280px;
+  min-width: 430px;
   margin: auto;
   color: white;
   background-color: rgb(0, 0, 1);
@@ -18,7 +19,9 @@ div.container {
 
 .recaptcha-container {
   display: flex;
-  margin: 120px auto;
+  align-items: center;
+  justify-content: center;
   text-align: center;
-  height: 40.8vh;
+  
+  height: calc(100vh - 134.800px);
 }

@@ -10,6 +10,7 @@ const Search = ({ searchValuefn }) => {
     if (!search) return; // If search input is empty, do nothing
 
     searchValuefn(search); // Call the passed function with search value
+    setSearch("");
   };
 
   return (
@@ -31,7 +32,6 @@ const Search = ({ searchValuefn }) => {
           </label>
           <button type="submit">Search Coin</button>
         </div>
-        <div></div>
       </form>
     </div>
   );

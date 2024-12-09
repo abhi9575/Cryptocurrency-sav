@@ -1,19 +1,33 @@
-.cryptoContainer{
+.cryptoContainer {
+  /* width: 70%; */
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   background-color: rgb(253, 0, 2);
   gap: 1rem;
   padding: 10px;
-
+  margin: auto;
 }
-@media (max-width: 780px) {
+
+/* @media (min-width: 780px) and (max-width: 1100px)  */
+@media (min-width: 780px) and (max-width: 1100px) {
   .cryptoContainer {
-    grid-template-columns: repeat(2, 1fr); 
+    width: 70%;
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
-@media (max-width: 480px) {
+/* @media (min-width: 500px) and (max-width: 780px)  */
+@media (min-width: 500px) and (max-width: 780px) {
   .cryptoContainer {
+    width: 60%;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* @media (min-width: 200px) and (max-width: 610px)  */
+@media (min-width: 200px) and (max-width: 610px) {
+  .cryptoContainer {
+    width: 50%;
     grid-template-columns: repeat(1, 1fr);
   }
 }

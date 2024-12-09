@@ -1,18 +1,18 @@
-.searchStyle>form>div{
+.searchStyle > form > div {
   display: flex;
   justify-content: center;
-  gap: 15px;
+  gap: 1rem;
   padding: 10px;
 }
 
-.searchedValue{
+.searchedValue {
   padding: 7px;
   font-size: 17px;
   border-radius: 6px;
   padding-left: 45px;
 }
 
-.searchStyle>form>div>button{
+.searchStyle > form > div > button {
   padding: 2px 5px;
   font-weight: 700;
   font-size: 14px;
@@ -20,7 +20,7 @@
   background-color: rgba(253, 0, 0, 0.904);
   cursor: pointer;
 
-  &:hover{
+  &:hover {
     background-color: black;
     color: #ff1100;
     transform: scale(1.05);
@@ -29,13 +29,30 @@
   }
 }
 
-.searchIconStyle{
+.searchIconStyle {
   position: relative;
 }
 
-.searchIcon{
+.searchIcon {
   position: absolute;
   font-size: 30px;
   left: 21px;
   top: 5px;
+}
+
+/* @media (min-width: 300px) and (max-width: 540px)  */
+@media (min-width: 300px) and (max-width: 540px) {
+  .searchStyle > form > div {
+    width: 80%;
+    margin: auto;
+  }
+
+  .searchStyle > form > div > label {
+    width: 100%;
+    margin: auto;
+  }
+  .searchStyle > form > div > label > input {
+    width: 100%;
+    margin: auto;
+  }
 }

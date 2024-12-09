@@ -1,16 +1,21 @@
-.paginationBox{
+.mainPaginationBox {
+  width: 100%;
   display: flex;
-  gap: 15px;
-  justify-content: center;
   align-items: center;
-  margin: 30px;
-  margin-top: 50px;
+  justify-content: center;
 }
 
+.paginationBox {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  margin: 18px;
+}
 
-.paginationBox>button{
+.paginationBox > button {
   background-color: #ff1100;
-  padding: 16px;
+  padding: 10px 15px;
   border-radius: 5px;
   min-width: 30px;
   color: black;
@@ -18,14 +23,41 @@
   font-weight: 700;
   cursor: pointer;
 
-  &:hover{
+  &:hover {
     background-color: black;
     color: #ff1100;
     transform: scale(1.2);
     transition: all 0.3s ease-in;
     border: 1px solid whitesmoke;
-
   }
 }
 
+/* @media (min-width: 540px) and (max-width: 780px)  */
+@media (min-width: 540px) and (max-width: 780px) {
+  .paginationBox {
+    margin: 30px;
+    display: grid;
+    width: 50%;
+    grid-template-columns: repeat(5, 1fr);
+  }
 
+  .paginationBox > button {
+    height: 43px;
+    width: 43px;
+  }
+}
+
+/* @media (min-width: 300px) and (max-width: 540px)  */
+@media (min-width: 100px) and (max-width: 540px) {
+  .paginationBox {
+    margin: 30px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    width: 50%;
+  }
+
+  .paginationBox > button {
+    height: 38px;
+    width: 38px;
+  }
+}

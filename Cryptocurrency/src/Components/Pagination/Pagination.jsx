@@ -15,6 +15,7 @@ const Pagination = ({ dataLength, itemsPerPage, paginate }) => {
   }, [dataLength, itemsPerPage]);
 
   return (
+    <div className={styles.mainPaginationBox}>
     <div className={styles.paginationBox}>
       {totalPage.map((page, index) => {
         return (
@@ -23,6 +24,7 @@ const Pagination = ({ dataLength, itemsPerPage, paginate }) => {
           </button>
         );
       })}
+    </div>
     </div>
   );
 };

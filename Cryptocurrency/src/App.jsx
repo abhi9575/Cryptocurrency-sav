@@ -95,7 +95,7 @@ const App = () => {
 
   // Handle reCAPTCHA verification
   function handleRecaptcha(value) {
-    console.log("reCAPTCHA success:", value);
+    // console.log("reCAPTCHA success:", value);
     setRecaptchaVerified(true);
   }
 

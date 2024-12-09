@@ -1,20 +1,17 @@
-.cryptoCard{
+.cryptoCard {
   border: 1px solid black;
   text-align: center;
   padding: 20px;
-  cursor: grab;  
-  background-color: rgb(0, 0, 1 );
-  touch-action: none;       
+  cursor: grab;
+  background-color: rgb(0, 0, 1);
+  touch-action: none;
   /* Added to align drag & drop functionality in Mobile Phone(Touch Screen) */
   border-radius: 8px;
-  &:active{
-    cursor: grabbing;  
+  &:active {
+    cursor: grabbing;
   }
 }
 
-
-
-
-.cryptoCard>img{
-  width: 35%;  
+.cryptoCard > img {
+  width: 35%;
 }
